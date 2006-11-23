@@ -1,0 +1,110 @@
+# *teclasat frequency scan*
+# Transponder list derived from www.hotbrd.de
+# 10.02.2006 wolfi
+# 404 Sender wurden gefunden.
+# Achtung: mehr als die Haelfte der folgenden Transponder-Daten
+# ergeben eine timeout-Stoerung und sind deshalb auskommentiert.
+#
+# Diese Transponderdaten sind unvollstaendig:
+# (als Platzhalter hier aufgefuehrt)
+#Neubelegung geplant:11457:V
+#xxxx:11026:H
+#xxyy:11079:V
+#Neubelegung geplant:11262:H:1:27500:::
+#Neubelegung geplant:11428:H
+#Neubelegung geplant:12188:V
+#xxxxx:11331:H
+#:12284:H
+#:12484:V
+#
+tr.110-Cyfra+ :10719:V:1:27500:::
+tr.111-British Telecom :10723:H:1:29900:::
+tr.112-TPS :10758:V:1:27500:::
+#tr.113-AFN :10775:H:1:28000:::
+tr.114-TPS :10796:V:1:27500:::
+#Duna TV :10815:H:1:27500:::
+tr.117-T-Systems :10853:H:1:27500:::
+tr.118-TPS :10873:V:1:27500:::
+#tr.xx-Cyfra+ :10892:H:1:27500:::
+tr.120-TPS :10911:V:1:27500:::
+tr.xx-Nova :10930:H:1:27500:::
+tr.122-GlobeCast :10949:V:1:27500:::
+tr.123-RRsat Global :10971:H:1:27500:::
+tr.124-RAI Intl :10992:V:1:27500:::
+tr.125-RRSat Global :11013:H:1:27500:::
+tr.126-Globesat :11034:V:1:27500:::
+tr.127-T-Systems :11054:H:1:27500:::
+tr.128-Viacom :11075:V:1:27500:::
+#tr.129-AFN :11096:H:1:28.000:::
+tr.xx-BBC World :11114:V:1:5632:::
+tr.130U-BBC Prime - Feed:11131:V:1:5632:::
+tr.131-British Telekom :11138:H:1:27500:::
+tr.132-Cyfrowy Polsat :11158:V:1:27500:::
+tr.133-Telespazio :11179:H:1:27500:::
+tr.134-NTItalia :11200:V:1:27500:::
+#tr.1-Sky Italia :11221:H:1:27500:::
+tr.2-Eutelsat :11242:V:1:27500:::
+#tr.4-Cyfra+ :11283:V:1:27500:::
+tr.5-Telespazio :11304:H:1:27500:::
+tr.7-Mediaset :11345:H:1:27500:::
+tr.9-Dfree :11387:H:1:27500:::
+tr.10-Grupa ITI:11408:V:1:27500:::
+tr.12-Mediaset :11449:H:1:27500:::
+tr.15-Cyfra+ :11513:H:1:27500:::
+tr.16-Telespazio :11534:V:1:27500:::
+tr.153-Trinity :11566:H:1:27500:::
+tr.154-GlobeCast :11585:V:1:27500:::
+tr.155-Dt.Telekom :11604:H:1:27500:::
+tr.156-GlobeCast :11623:V:1:27500:::
+tr.157-Bloomberg :11642:H:1:27500:::
+tr.158-TPS :11662:V:1:27500:::
+#tr.159-AB-Sat :11681:H:1:27500:::
+tr.50-British Telekom :11727:V:1:27500:::
+tr.51-SamaCom :11747:H:1:27500:::
+tr.52-RAI :11766:V:1:27500:::
+tr.53-RTVE- :11785:H:1:27500:::
+tr.54-RAI :11804:V:1:27500:::
+#tr.55-Nova :11823:H:1:27500:::
+tr.56-Sky Italia :11843:V:1:27500:::
+#tr.57-Sky Italia :11862:H:1:27500:::
+#tr.58-Sky Italia :11881:V:1:27500:::
+#tr.59-Sky Italia :11900:H:1:27500:::
+tr.60-Mediaset :11919:V:1:27500:::
+tr.61-Nova :11938:H:1:27500:::
+#tr.62-Sky Italia :11958:V:1:27500:::
+#tr.63-Sky Italia :11977:H:1:27500:::
+tr.64-Sky Italia :11996:V:1:27500:::
+tr.65-Arabesque :12015:H:1:27500:::
+#tr.66-Sky Italia :12034:V:1:27500:::
+#tr.67-Sky Italia :12054:H:1:27500:::
+#tr.68-Sky Italia :12073:V:1:27500:::
+tr.69-TSA:12092 :H:1:27500:::
+tr.69-Telespazio :12111:V:1:27500:::
+tr.72-Ant.Hungaria :12149:V:1:27500:::
+tr.73-Nova :12169:H:1:27500:::
+tr.75-RR Sat :12207:H:1:27500:::
+tr.76-VoA :12226:V:1:27500:::
+tr.77-GlobeCast :12245:H:1:27500:::
+tr.78-DCTV Daimler :12265:V:1:27500:::
+tr.80-RTV Slovenija :12303:V:1:27500:::
+tr.81-Cyfrowy Polsat :12322:H:1:27500:::
+#tr.82-Sky Italia :12341:V:1:27500:::
+tr.83-Cyfrowy Polsat :12360:H:1:27500:::
+tr.84-GlobeCast :12380:V:1:27500:::
+tr.85-SBC Swiss :12399:H:1:27500:::
+#tr.86-Sky Italia :12418:V:1:27500:::
+tr.87-IRIB :12437:H:1:27500:::
+#tr.88-Hallmark :12460:V:1:27500:::
+tr.89-Belgacom :12476:H:1:27500:::
+tr.90-HRT :12520:V:1:27500:::
+tr.91-Eutelsat :12539:H:1:27500:::
+tr.91-SkyGate :12558:V:1:27500:::
+tr.92-Pink :12577:H:1:27500:::
+tr.93-GlobeCast :12597:V:1:27500:::
+#tr.94-Sky Italia :12616:H:1:27500:::
+#tr.95-Sky Italia :12635:V:1:27500:::
+tr.96-Arabsat :12654:H:1:27500:::
+tr.97-RTM :12673:V:1:27500:::
+tr.99-AB Sat :12692:H:1:27500:::
+tr.100-Sky Italia :12713:V:1:27500:::
+#tr.101-Sky Italia :12731:H:1:27500:::

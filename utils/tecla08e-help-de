@@ -1,0 +1,774 @@
+Datei:        tecla08d-help-de
+passend zu:   tecla08d-02.sh
+Datum:        03.03.2006
+
+Teclasat
+Gebrauchsanleitung: Hauptteil.
+Installationsanleitung: Anhang.
+
+*** Inhaltsverzeichnis. ***
+
+1.   Teclasat
+1.1    Einführung.
+1.2    Spezifikationen.
+2.   Programmstruktur und Installationswege.
+2.1    Programmstruktur.
+2.2    Installationswege: Standard- oder Bastlermodus.
+3.   Senderlisten.
+4.   Grundzüge der Bedienung.
+5.   Tastenkürzel.
+6.   'Titel' in den Favoriten-Listen.
+7.   Timer-Aufnahme mit automatischer Namensgebung für Aufnahme-Dateien.
+8.   Teclasat einrichten.
+8.1    Signalquelle.
+8.2    Signalart
+8.3    Treiber-Module.
+8.4    Playerwahl.
+8.5    Videotext-Auswahl.
+8.6    Anzeigen.
+8.6.1    Senderdaten.
+8.6.2    aus-Knöpfe.
+8.7    Extras.
+8.7.1    Auto-Name.
+9.    Sprachen.
+10.   Zeitwerte.
+10.1    t0 = Standzeit Welcome-Fenster.
+10.2    t1 = Interval szap -> xine.
+10.3    t2 = Intervall nach kill-prog
+11.   Farben.
+12.   Video- und Audio-Treiber für MPlayer.
+13.   Sendersuchlauf: Grundsätzliches.
+13.1    Die Strategien: dvb- und Frequenzsuchlauf.
+13.2    Die Suchlisten.
+13.3    Die timeout-Störung.
+13.4    Iterativer Suchlauf.
+13.5    Die Abfolge eines Suchlaufs.
+13.6    Einklassierung der Suchlaufergebnisse.
+13.7    Abspeichern der Suchlaufergebnisse.
+13.8    Senderlisten bearbeiten: der Editor.
+14.  Sendersuchlauf: Praktische Ausführung.
+14.1    Schnelldurchlauf: Favoritensender auf Astra.
+14.2    Parametereinstellung für alle Möglichkeiten.
+15.  Videotext mit Teclasat: alevt-dvb und mtt4.
+16.  EPG mit Teclasat: dvbrowse.
+17.  Pegelanzeige mit dem Hilfsprogramm 'pegel'.
+A-0.  Anhang:
+A-1.  Installation und Systemvoraussetzungen.
+A-2.  Installation als 'Bastler-System'.
+A-3.  Die Installation als 'Standard-System'.
+A-4.  Hinweise zum Programmstart.
+A-4.1   Das tecla-Script starten.
+A-4.2   Kaltstart.
+A-4.3   Warmstart.
+A-4.4   Halbwarmstart.
+
+
+
+
+1.   Teclasat:  Übersicht.
+1.1  Einführung.
+
+Teclasat ist ein Programm zur Wiedergabe und zum Aufzeichnen von Radio- und TV-Sendungen mit der Pinnacle PCTVSat-Karte und kompatiblen Karten. Darüber hinaus bietet Teclasat viele ntzliche Hilfsfunktionen rund um diesen Bereich. Die Verwendung von Teclasat ist in weitem Maße selbsterklärend. Das Teclasat-System ist aber sehr ausgedehnt und komplex. Deshalb wird sich sein voller Nutzen dem Benutzer nur dann erschließen, wenn er sich in dieser Anleitung ausreichend informiert, ggf. auch nur selektiv anhand des Inhaltsverzeichnisses.
+
+'Teclasat' war ursprünglich ein Script für Experimente rund um die PCTVSat-Karte, geschrieben in der Programmiersprache tcl/tk. An den kryptischen Namen 'tcl/tk' - in deutscher Aussprache - soll der Scriptname 'teclasat' anklingen.
+
+
+1.2  Spezifikationen.
+
+- einfache und komfortable Auswahl von Sendern für direkte Wiedergabe,
+- manuelles Aufzeichnen, Start/Pause/Weiter/Stop, mit oder ohne Wiedergabe;
+- zeitprogrammiertes Aufzeichnen, auch periodische Aufnahmen;
+- Auswahl zwischen dvb-s, dvb-t, dvb-c als Signaleingang;
+- Auswahl zwischen Wiedergabe-Programmen (Playern): xine, totem, kaffeine, mplayer;
+- Videotext mit mtt4/mtt oder alevt-dvb;
+- EPG mit dvbrowse;
+- Automatischer Suchlauf, Pegelanzeige;
+- mächtiger und komfortabler Editor zum Bearbeiten von Senderlisten;
+- zwei Favoritenlisten 'Favo1' und 'Favo2', z.B. für TV + Radio;
+- spezielles Lesezeichensystem ('Titel') in den Favo- und Radiolisten;
+- einfache, einsteigerfreundliche Installation und Pflege des Programms.
+- Programmsprache des Haupt-Scriptes: tcl/tk.
+
+
+
+2.  Programmstruktur und Installationswege.
+
+2.1 Programmstruktur.
+
+Anders als die meisten üblichen Programme für Linux-Anwendungen ist Teclasat nicht ein compiliertes c-Programm, sondern in der Programmiersprache tcl/tk geschrieben. Es ist also ein in Klartext lesbares Script und wird erst während der Ausführung von einem tcl-Interpreter umgesetzt. Dies ist für den Anwender in den meisten Fällen belanglos, führt aber manchmal auch zu gewissen Besonderheiten.
+
+Das Teclasat-Programm kommt in einer gepackten zip-Datei. Nach dem Entpacken hat man drei Gruppen von Dateien:
+(a) Programm-Dateien: das eigentliche tecla-Script sowie ausgelagerte Textdateien (Hilfe, Meldungen, etc);
+(b) Arbeits-Dateien: Senderlisten, Konfigurationen und ähnliches als lesbare Text-Dateien;
+(c) externe Binär-Programme: Programmpakete wie z.B. 'alevt-dvb' und 'pegel' .
+Näheres zur Installation findet man im Anhang.
+
+
+2.2 Installationswege: Standard- oder Bastlermodus.
+
+Hier sei auf zwei mögliche Schwerpunkte bei der Anwendung hingewiesen:
+
+Version A:
+Teclasat lässt sich als normales Multimedia-Programm einsetzen. Dazu werden die Programm- und Hilfsdateien wie übliche Programme im schreibgeschützten Bereich installiert und werden von der üblichen Systemverwaltung gepflegt. Das ist z.B. in Kanotix der Fall.
+
+Version B:
+Durch die flexible Programmiersprache tcl/tk lässt sich der Programmcode von Teclasat mit einem normalen Text-Editor leicht einsehen und modifizieren. Kompilieren oder ähnliches ist nicht nötig. Für Experimentierfreudige, die ihre Kreativität in individuellen Lösungen entfalten wollen, empfiehlt es sich, alle Teclasat-Dateien im leichter zugänglichen Benutzerbereich zu installieren.
+Diese Methode ist auch empfehlenswert für eine schnelle, provisorische Installation, z.B. zum Kennenlernen.
+
+Im Anhang sind beide Installationsmethoden beschrieben.
+
+
+3.  Senderlisten.
+
+Teclasat verwaltet die Senderlisten in vier Dateien:
+
+(a)  Basisliste   $blist:  die möglichst vollständige Liste von Senderkanälen.
+(b)  Arbeitsliste $wlist:  aus der Basisliste abgeleitet, evtl. sortiert, gefiltert, oder leer.
+(c)  Favoriten1   $favo1:  eine persönliche Favoritenauswahl aus (a) oder (b) oder anderem, evtl. leer.
+(d)  Favoriten2   $favo2:  eine alternative Favoritenauswahl, üblicherweise für Radios, evtl. leer.
+
+Alle vier  Senderlisten enthalten in Klartext die vollständigen Daten der Senderkanäle, und zwar in den üblichen Formaten für die Programme szap, tzap, czap, mplayer. Die Listen sind auch insofern unabhängig, als in jeder Datei Sender stehen dürfen, die in anderen Dateien nicht vorkommen. Man kann demnach in einer Favoritenliste Sender aus verschiedenen Basislisten verwalten, beispielsweise aus verschiedenen dvb-s- bzw. dvb-t-Listen.
+
+Die Anwahl von Sendern für Wiedergabe, Aufnahme sowie Timer-Programmierung ist aus jeder Liste möglich.
+
+Im Teclasat-Hauptfenster werden hinter der Kurzbezeichnung Fav1 bzw. Fav2 die entsprechenden Dateinamen angezeigt, z.B. 'ARD-Favos' oder 'Radio'. Man kann je nach persönlichen Vorlieben mehrere Favoritenlisten anlegen und sie entsprechend benennen und anwählen, z.B. 'Spanien' oder 'Sport' oder 'Opa'.
+
+Teclasat bietet im Hauptfenster einige Editierfunktionen: einzelne Sender löschen oder verschieben. Diese Funktionen sind in allen Listentypen verfügbar und wirken nur auf die jeweils angewählte und sichtbare Liste. Für eingehendere Bearbeitung der Senderlisten empfiehlt sich der Suchlauf-Editor.
+
+In der Betriebsart 'Filter/Sort' sind eine Reihe von Filter- und Sortierfunktionen verfügbar. Die Arbeitsliste $wlist wird z.B. alphabetisch oder nach Satelliten bzw. nach TV/Radio geordnet oder gefiltert. Die Funktionen können auch rekursiv nacheinander angewendet werden. Falls die Arbeitsdatei leer ist, wird als Ausgangsliste die Basisliste $blist einkopiert.
+
+Aus der Basisliste oder der Filter/Sort-Datei kann jeder angewählte Sender in die Favo--Listen einkopiert werden. Dort wird er unten angefügt und kann dann an die gewünschte Stelle verschoben werden. Das Lesezeichen-System ('Favo-Titel') besprechen wir in Abschnitt 6.
+
+Die Namen und die Ordner für die vier Listen-Dateien sind grundsätzlich frei wählbar, wenn auch z.B. für die Basisliste eine Bezeichnung  "~/.tecla/channels.conf"  üblich und praktisch ist. Die eingangs genannten Namen ($blist etc.) sind nur Platzhalter.
+
+In jeder der vier Listendarstellungen findet sich ein Anwahlknopf, mit dem man eine Datei einschließlich Verzeichnis 'importieren' kann. Die angewählte Datei bleibt an ihrem Orte und übernimmt voll die Rolle der betreffenden Liste, d.h. Aktionen wie 'Sender löschen oder verschieben' wirken sich dort aus.
+
+Ebenso kann man jede der vier Listen-Dateien als Sicherheitskopie 'exportieren'; aktuelle Arbeitsdatei bleibt dabei die bisher angewählte Datei.
+
+
+4.  Grundzüge der Bedienung.
+
+Die Benutzung von Teclasat ist weitgehend selbsterklärend, so dass wir uns hier auf wenige Hinweise beschränken können.
+
+Die wichtigen Grundfunktionen sind vom Hauptfenster aus zugänglich. Ein Klick auf 'Wiedergabe - ein' startet die Wiedergabe des angewählten Senders, zugleich verwandelt sich der 'ein'-Knopf in einen 'aus'-Knopf. Entsprechend kann ich mit 'Aufnahme - ein' die Aufnahme manuell starten, je nach Bedarf mit oder ohne gleichzeitige Wiedergabe.
+
+Mit den karo-förmigen Radio-Knöpfen rechts oben wähle ich an, welche Senderliste gezeigt werden soll.
+
+Eine kontext-abhängige Leiste von Knöpfen erscheint nach Anklicken von 'Ausklappen' im System-Feld. Die Bedeutung der Funktionen erschließt sich aus den übrigen Abschnitten dieser Anleitung.
+
+Den übrigen Funktionen ('Videotext', 'Timer', 'Einrichten', 'Suchlauf' sowie 'alle Prog.aus') sind eigene Abschnitte gewidmet, siehe unten.
+
+5.  Tastenkürzel.
+
+Teclasat lässt sich fast vollständig mit Mausklicks steuern. Nur für wenige, selten gebrauchte Eingaben sind alphanumerische Eingaben erforderlich.
+
+*** Wichtiger Hinweis: ***
+Für den Fall, dass auf dem Bildschirm mehrere Fenster geöffnet sind, muss in der Regel zunächst das zuständige Fenster angeklickt werden, damit dort der Cursor erscheint. Dies gilt auch für die anschließend beschriebene Tastensteuerung. Andernfalls werden evtl. die Tastenanschlüsse von anderen Fenstern eingefangen.
+
+Alternativ zu den Knöpfen in Teclasat sind folgende Tastensteuerungen eingerichtet. Man beachte insbesondere (i)+(j), welche eine sehr effektive Senderwahl in der Radio- und Favoliste ermöglichen. Auch (k)+(l) sind sehr praktisch.
+
+
+(a) Abwärts -Pfeil  Selektion abwärts;  nächsten Sender anwählen, sel-down)
+(b) Aufwärts-Pfeil  Selektion aufwärts; vorigen  Sender anwählen, sel-up)
+(c) ctrl-u          angewählten Sender hochschieben   (move-up)
+(d) ctrl-d          angewählten Sender runterschieben (move-down)
+(e) ctrl-f          angewählten Sender in Favo-Liste  anfügen (Favo  einfg)
+(f) ctrl-r          angewählten Sender in Radio-Liste anfügen (Radio einfg)
+(g) ctrl-v          Wiedergabe-ein mit angewähltem Sender (view-on)
+(h) ctrl-s          Wiedergabe-aus                        (view-off)
+(i) Links-Pfeil     vorigen Titel anwählen
+                    (nur in Favo- und Radioliste, sonst keine Wirkung)
+(j) Rechts-Pfeil    nächsten Titel anwählen
+                    (nur in Favo- und Radioliste, sonst keine Wirkung)
+(k) Bild-abwärts    zum 'nächsten' Sender zappen (view-next),
+                    falls ein Sender in Wiedergabe steht; andernfalls:
+		    Wiedergabe-ein mit angewähltem Sender (view-on)
+(l) Bild-aufwärts   zum 'vorigen' Sender zappen  (view-prev)
+                    falls ein Sender in Wiedergabe steht; andernfalls:
+		    Wiedergabe-ein mit angewähltem Sender (view-on)
+(m) ctrl-Abwärts-Pfeil   wie (k), view-next
+(n) ctrl-Aufwärts-Pfeil  wie (l), view-prev
+(o) Doppelklick in Sendertabelle: Wiedergabe-ein (view-on)
+
+
+6.  'Titel' in den Favoriten-Listen.
+
+Die 'Titel' in den Favoriten-Listen sind ein sehr einfaches und wirksames Lesezeichen-System, exclusiv von Teclasat. Formal sind es in die Senderlisten eingestreute Überschriften mit beliebigem, nicht zu langem Text, welche von jeweils vier 'underscore' umrahmt werden. Zum Beispiel:  '____ARD_etc.____' oder ähnlich. Sie können eine längere Senderliste optisch übersichtlicher gestalten, sie helfen aber auch beim schnellen Auffinden eines gewünschten Senders.
+
+Um einen Titel einzufügen, selektiert man in der Favo-Liste die gewünschte Stelle und klickt (ggf. 'Ausklappen' -) 'Titel einfg.'. Es öffnet sich ein Eingabefenster. Mit einem Klick setze ich den Cursor, gebe den Titel ein (ohne die underscores), und mit OK wird der neue Titel hinter dem markierten Sender eingefügt. Die Titel lassen sich wie normale Sendernamen verschieben bzw. löschen.
+
+Zur Anwendung der Lesezeichen-Funktion klicke ich auf den Radio-Knopf 'Fav1-Titel' bzw. 'Fav2-Titel'. Es erscheint eine Liste der Titel ohne die Sendernamen, so dass sie normalerweise in das Fenster passt, etwa so:
+  ____ARD etc.____
+  ____Kommerz____
+  ____Dritte____
+  ____ARD etc. spezial____
+  ____News + Sport____
+
+Ich wähle einen Titel an, z.B. ' ____Dritte____' , und dann den Radio-Knopf 'Fav1'. Jetzt sehe ich wieder die Favoritenliste mit den Sendernamen, der gewählten Titel ist in den sichtbaren Bereich gerckt, und der erste Sender dieser Gruppe ist angewählt.
+
+Besonders effektiv wird dieses Lesezeichen-System, wenn man zum Ansteuern der Titel die Pfeiltasten mitbenutzt; s. Abschnitt 5., (i+j).
+
+
+
+7.  Timer-Aufnahme mit automatischer Namensgebung für Aufnahme-Dateien.
+
+Teclasat kann Radio- und Fernsehsendungen in dreierlei Weise aufzeichnen:
+- manuell, mit dem Knopf 'Aufzeichnen - Start';
+- Timer-Aufnahme über den Timer-Dialog;
+- Serien-Aufnahmen: z.B. täglich, wöchentlich, etc, ebenfalls über den Timer-Dialog.
+Bei Timer-Aufnahmen kann wahlweise zum Schluss das System abgeschaltet werden. Voraussetzung dazu ist, dass der Befehl 'halt' in der sudoers-Datei eingetragen ist. Dieses Verfahren kann nur erfahrenen Benutzern empfohlen werden. Auch ist zu beachten, ob durch die automatische Abschaltung ggf. andere Benutzer bzw. Prozesse gestört werden.
+
+Jede Aufnahme wird in einer Datei abgelegt, deren Ordner und Dateiname in dreierlei Weise festgelegt werden kann:
+(a)  als default-Wert ('recfild'),
+(b)  als Auto-Name,
+(c)  durch individuelle Eingabe.
+
+Zu (a): Für Ordner und Dateiname ist ein Default-Wert ~/pctv/rec/rec01.ts vorgegeben. Der Benutzer kann z.B. mit 'Aufnahme - Datei' einen neuen Defaultwert eingeben. Dieser Dateipfad bleibt über die Config-Datei erhalten, auch bei Neustart (Warmstart) von Teclasat. Neue Aufnahmen werden an die vorgegebene Datei angehängt.
+
+Zu (b): Sofern die Auto-Name-Funktion aktiviert ist, bildet Teclasat für jede manuelle Aufnahme automatisch einen eigenen Dateiamen. Er besteht aus einem Senderkürzel und einem Zeitkürzel, in der Form: 'sender-yyyymmdd-hhmmss.ts' .
+'sender' entsteht aus den ersten zehn Zeichen des Sendernamens. Umlaute und Zwischenräume werden umgewandelt. Bei Namen, die mit Ziffern beginnen (z.B. 3sat) wird ein 's' vorgesetzt. So werden legale Dateinamen gewährleistet.
+Für das Zeitkürzel wird bei manuellen Aufnahmen der aktuelle Aufnahmebeginn herangezogen, bei Timer-Aufnahmen der programmierte Aufnahmebeginn.
+
+Zu (c): Bei Timer-Aufnahmen, auch in Serie, wird der default-Wert (a) als Vorlage genommen. Der Benutzer kann stattdessen
+- per Knopfdruck einen Auto-Namen generieren, mit dem default-Verzeichnis als Ordner, oder
+- im Eingabefeld Namen + Verzeichnis modifizieren. Diese Eingabe ist individuell für diese Aufnahme und bleibt für spätere Eingaben nicht erhalten.
+
+
+
+8.  Teclasat einrichten.
+
+In den meisten Fällen wird man mit den automatischen Einstellungen von Teclasat gut zurechtkommen. Das Unter-Fenster 'Einrichten' bietet zahlreiche Möglichkeiten, den Betrieb zu optimieren oder an persönliche Bedürfnisse anzupassen.
+
+8.1   Signalquelle.
+
+In den meisten Installationen gibt es nur eine PCTVSat-Karte, welche über 'adapter0' angesprochen wird. Ggf. können mehrere dvb-Karten installiert sein, und zusätzliche Geräte können über USB angeschlossen werden. Sie werden dann über adapter #1,2,3 angesprochen.
+
+8.2   Signalart
+
+Mit den Radio-Knöpfen kann der Benutzer eine Signalart auswählen: dvb-s, dvb-t, dvb-c.
+Bei diesen Umschaltmöglichkeiten ist Vorsicht geboten. Weil noch wenig Erfahrungen damit vorliegen, sind noch keine automatischen Überprüfungen eingebaut, ob beispielsweise durch das Umschalten eine gerade laufende Aufnahme gestört würde. Ebenso wird nicht überprüft, ob die angewählten Senderlisten geeignet sind.
+
+8.3   Treiber-Module.
+
+Diese Einstellmöglichkeit wird nicht mehr benötigt und ist vorerst deaktiviert.
+
+8.4   Playerwahl.
+
+Beim Programmstart überprüft Teclasat, welche Player verfügbar sind, und zeigt die entsprechenden Radio-Knöpfe zur Auswahl an. Unterstützt werden xine, kaffeine, totem und mplayer.
+
+
+8.5   Videotext-Auswahl.
+
+In gleicher Weise berprüft Teclasat beim Programmstart die Videotext-Programme und zeigt die entsprechenden Radio-Knöpfe zur Auswahl an. Unterstützt werden alevt-dvb und mtt4/mtt. Näheres s. Abschnitt 15.
+
+
+8.6   Anzeigen.
+
+8.6.1   Senderdaten.
+Wenn dieser Knopf aktiviert ist, zeigt Teclasat im Hauptfenster unter der Senderliste den Namen sowie die Senderdaten aus der Senderliste für den gerade angewählten Sender an.
+
+8.6.2   aus-Knöpfe.
+Hiermit wird die Farbgebung der 'aus-Knöpfe' gesteuert. Beim Aktivieren einer Funktion, z.B. 'Wiedergabe-ein' oder 'Ausklappen', wird in der Regel ein Knopf eingewechselt, welcher die betreffende Funktion abschaltet, also z.B. 'Wiedergabe-aus' oder 'Einklappen'. Dieser Knopf wird eingefärbt, wenn die Anzeige-Funktion 'aus-Knöpfe' aktiviert ist. Die Farbqualität dieser aus-Knöpfe kann man im Farbwahl-Fenster einstellen.
+Wer das Teclasat-Fenster mit den eingefärbten Knöpfen als zu unruhig empfindet, kann diese Funktion deaktivieren.
+
+
+8.7   Extras.
+
+8.7.1   Auto-Name.
+Der Knopf zeigt an, ob die automatische Namensgebung für Aufnahmedateien aktiv ist, und kann diese Funktion ein- bzw. ausschalten. Näheres s. Abschnitt 7: Auto-Name.
+
+
+
+9.   Sprachen.
+
+Seit Version tecla07g sind alle Dialogtexte aus dem Tecla-Script in eine externe Datei ausgelagert. Beim Programmstart liest tecla diese Texte und setzt sie im Programm ein. Für den Normalnutzer ändert sich dadurch das Erscheinungsbild gar nicht.
+
+Eine Basisversion der Texte bleibt im Tecla-Script enthalten, so dass ein Betrieb auch ohne die externen Dateien möglich ist.
+
+Als externe Datei ist vorerst tecla08d-msg-de verfügbar; sie stimmt inhaltlich mit der eingebauten default-Lösung überein. Weitere Dateien in einigen Fremdsprachen sind geplant, und zwar zunächst mit den Bezeichnungen tecla08d-msg-en (englisch), tecla08d-msg-es (spanisch), sowie tecla08d-msg-test (für Experimentierzwecke). Die zugehörige Hilfe-Datei hat die Bezeichnung tecla08d-help-de, -en, -es, -test.
+
+Mit den Radio-Knöpfen im Sprachen-Fenster kann der Benutzer zwischen den verfügbaren Sprachversionen auswählen. Ggf. lässt sich für die Hilfsdateien auch ein abweichendes Verzeichnis anwählen. Für die Dialogdateien wird eine geänderte Wahl erst nach einem Neustart des Programmes wirksam.
+
+
+10.  Zeitwerte.
+
+In dieser Funktion können verschiedene Zeitwerte mit Schiebereglern eingestellt werden.
+Die derzeit im Programm aktuellen Werte und die Stellung der Schieberegler wird angezeigt. Mit den rechten Knöpfen kann man den jeweils eingestellten Wert für t0,t1,t2 im Programm abspeichern. Mit 'Defaultwerte' kehrt man zu den voreingestellten Werten zurück, falls man beim Experimentieren nicht eine bessere Lösung gefunden hätte. Im einzelnen:
+
+10.1   t0 = Standzeit Welcome-Fenster.
+Beim Programmstart kann Teclasat ein animiertes Willkommensfenster abbilden. Testweise kann man das Fenster mit 'Dauerlauf' permanent, oder mit 't0-Test' für die auf dem Schieberegler eingestellte Zeit abbilden. Ausschalten lässt es sich durch Klick auf das Icon.
+Wer sich für die Programmiersprache tcl/tk interessiert, dem sei verraten, dass der entsprechende Programmteil eine hervorragende Programmierbung für Einsteiger darstellt. Für den Betrieb von Teclasat als TV-Tool ist er weniger von Bedeutung.
+
+10.2   t1 = Interval szap -> xine.
+Mit dieser Funktion lässt sich eine Wartepause zwischen die Aufrufe von szap + xine einstellen, oder allgemein zwischen szap + Player-Programm. Je nach Kernelversion dauert es einige Zeit (500 msec?) bis nach dem Aufruf von szap die Treiber-Module aktiv und die Karte betriebsfähig ist. Nach einigen Programmänderungen scheint ein Defaultwert t1 = 0 tolerabel zu sein.
+
+10.3   t2 = Intervall nach kill-prog
+Es wurden Konstellationen gefunden, in denen das Herunterfahren des Linux-Systems blockiert wurde, weil gewisse Programme (timer etc.) Resourcen belegten, die dann nicht freigegeben wurden.
+Zu Testzwecken wurde der Knopf 'alle Prog.aus' im Systembereich (unten links) eingebaut. Weiterhin ist ein Zeitintervall nach dem Abschießen der fraglichen Prozesse einstellbar.
+'Normalbenutzer' dürfen diese Funktion als gegenstandslos ansehen.
+
+
+
+11.  Farben.
+
+Diese Funktion könnte die Ästheten unter unseren Nutzern ansprechen; ihr größerer Wert liegt vielleicht doch in der Programmierübung, die sich darin verbirgt.
+
+Mit drei Schiebereglern können drei Grundfarben eingestellt werden(rot, grün, blau). Das rechte Kontrollfenster zeigt die resultierende Mischfarbe, sowie im Hex-Code den Farbwert. Der untere Teil zeigt die aktuell gespeicherten Farbwerte an, und zwar in den vier Bereichen Hintergrund (ganzes Fenster einschl. Knöpfe), Vordergrund (Beschriftungen), Aktive Teile (vom Mauszeiger berührt) und 'aus-Knöpfe' (s. Abschnitt 8.5.2).
+
+Mit den Knöpfen der mittleren Reihe lassen sich die Farbwerte einzeln abspeichern.
+
+Der Knopf 'Defaultwerte' auf der rechten Seite kehrt zu den Voreinstellungen zurück.
+
+
+12.  Video- und Audio-Treiber für MPlayer.
+
+Im Konfigurationsmen werden alle für den MPlayer verfügbaren Audio- und Video- Ausgabetreiber angezeigt. Nähere Informationen dazu gibt es in der MPlayer-Dokumentation.
+Diese Treiber sind stark hardwareabhängig. Deshalb werden nicht alle Treiber auf jedem System ohne weiteres funktionieren. Vor allem manche Videotreiber können zu einer fehlerhaften Anzeige des Videobildes führen oder den Start des MPlayers ganz verhindern. In Ausnahmefällen kann es sogar zum Absturz des Xservers kommen.
+Diese Konfigurationsmöglichkeit ist nur für solche Nutzer gedacht, die wissen, was sie da tun. Andernfalls, und speziell wenn der MPlayer problemlos funktioniert, sollte man es bei den normalen Voreinstellungen belassen.
+
+
+13.  Sendersuchlauf: Grundsätzliches.
+
+13.1 Die Strategien: dvb-Suchlauf, Einzelabfrage, Listensuchlauf.
+
+Für einen Sendersuchlauf gibt es grundsätzlich drei Strategien:
+   (a)  dvb-Suchlauf,
+   (b)  Abfrage von Einzeltranspondern,
+   (b)  Listensuchlauf.
+Teclasat stellt alle drei Methoden zur Auswahl.
+
+Der dvb-Suchlauf stützt sich auf die Tatsache, dass zumindest in einigen Transpondern eines dvb-Systems Information über das ganze System mitgeliefert wird, so dass man daraus weitere Transponder identifizieren und auswerten kann. Voraussetzung sind also die Kennwerte eines geeigneten 'Initial-Transponders': Frequenz, Polarität, Symbolrate. Ausgehend von diesem Initial-Transponder lassen sich dann Schritt für Schritt die Sender des Systems identifizieren.
+
+Falls die genannten Kenndaten eines beliebigen Transponders bekannt sind, so kann man die dort übertragenen Senderkanäle gezielt abfragen.
+
+Der Listensuchlauf basiert auf einer mehr oder weniger vollständigen Liste der Transponder eines Systems, die dann automatisch der Reihe nach abgefragt werden.
+
+Eigentlich stellt der dvb-Suchlauf eine besondere Errungenschaft des digitalen Systems dar:
+- der Ablauf ist völlig automatisch und wartungsfrei,
+- neue Transponder sowie Systemänderungen werden weitgehend automatisch erkannt.
+Dem stehen praktische Nachteile gegenüber:
+- der Suchlauf erstreckt sich über das ganze System und ist deshalb zeitaufwändig,
+- die PCTVSat-Karte ist höchst anfällig gegen eine 'timeout-Störung', auf die wir noch genauer eingehen müssen.
+
+Die Suchlauf-Prozedur in Teclasat ist auf diese Gegebenheiten abgestimmt und bietet in ungewöhnlichem Ausmaß die Werkzeuge, und alle beteiligten Senderlisten komfortabel zu erstellen, zu bearbeiten und zu pflegen. In diesem Abschnitt behandeln wir te technischen Grundlagen des Suchlaufs; im Abschnitt 14 geht es um die praktische Durchführung.
+
+
+
+13.2 Die Suchlisten.
+
+Teclasat kennt zwei Arten von Suchdateien:
+   (a) die dvb-Suchdatei,
+   (b) die Transponderliste für den Listensuchlauf.
+Beides sind einfache Textdateien und enthalten Transponderdaten in der Form
+   TransponderID:frequenz:Polarität:sat#:SRate::: ,
+   beispielsweise Trp.93:12266:h:0:27500:::
+Dabei ist die TransponderID  eine beliebige Kurzbezeichnung und dient lediglich zur leichteren Identifizierung.
+Die abschließenden drei Doppelpunkte sind aus programmtechnischen Gründen erforderlich; evtl. angegebene pid-Werte werden ignoriert.
+
+Die dvb-Suchdatei enthält nur die Daten des Initialtransponders in der Form, wie sie bei den Linux-dvb-tools üblich ist. Der Dateiname (z.B. Astra-13.2E oder Hotbird-13.0E ) bezeichnet den Satelliten. Die Auswahl legt zugleich fest, welcher Satellit unter sat#0 und sat#1 zu verstehen ist.
+
+Für den Listensuchlauf erwartet Teclasat bis zu drei Suchlisten je Satellit, mit Dateinamen in der Form
+   astra-list0  astra-list1  astra-list2
+und entsprechend z.B. hotbird-list0  oder hispasat-list0.
+Im Dialog werden nur Dateien zur Auswahl angeboten, die tatsächlich installiert sind.
+
+Die Suchlisten kann man den persönlichen Bedürfnissen entsprechend gestalten. Praktisch ist es, wenn list0 ein möglichst vollständiges Transponderverzeichnis darstellt, während list1 und list2 auf die Favoriten- und Radioliste abgestimmt sind. Die nötigen Transponderdaten kann man sich direkt bei den Systembetreibern beschaffen, z.B. über www.astra.de oder www.hotbird.de , was ausgesprochen mühsam ist. Als Starthilfe erstellt tecla bei einem dvb-Suchlauf eine fertig formatierte Transponderliste als Datei "~/pctv/scan/tmp3/dvb-transponders" . Man führt also zunächst einen dvb-Suchlauf durch, speichert die Datei "dvb-transponders" ins Verzeichnis scanctrl-Verzeichnis (vgl. unten: A-3.6) und erstellt daraus mit dem Editor eine Transponderliste nach eigenen Vorstellungen.
+
+Alternativ oder ergänzend zu den Listendateien kann man manuell einen Einzeltransponder eingeben. Weitere Einzelheiten s. Abschnitt 14.
+
+
+13.3 Die timeout-Störung.
+
+Die praktische Erfahrung zeigt, dass die Kombination "pctvsat-Karte + Linux-Treiber + scan-Programm" den Suchlauf nicht zuverlässig unterstützt. Sporadisch und ohne erkennbare Regel wird das Auslesen der Transponderinformation vorzeitig abgebrochen. Das Scan-Programm meldet dann eine 'timeout-Störung', und es bestehen drei Möglichkeiten:
+   (a) die PCTVSat-Karte ist dauerhaft blockiert,
+   (b) die Linux-Treiber sind blockiert,
+   (c) das ganze System bleibt funktionsfähig.
+Der erste Fall tritt zum Glück sehr selten auf; dann ist aber anschließend auch kein TV-Empfang mehr möglich, und als einziger Ausweg bleibt, das System neu zu booten.
+
+Der zweite Fall bewirkt, dass die timeout-Störung auch bei allen nachfolgenden Transpondern auftritt. Diese Blockierung lässt sich meistens aufheben, indem man den Treibermodul erst entlädt und gleich wieder lädt, etwa so:
+> su (-> root-passwd eingeben)
+# modprobe -r dvb-bt8xx
+# modprobe dvb-bt8xx
+# exit
+Solange der Treibermodul entladen ist, fällt im Suchlauf-Fenster die Pegelanzeige auf Null zurück - ein Anzeichen, dass alles planmäßig funktioniert.
+
+Der dritte Fall ist vergleichsweise unproblematisch. Man kann den Suchlauf mit anderen Transpondern fortsetzen oder ggf. mit dem gleichen Transponder wiederholen.
+
+Welcher Fall im einzelnen eintritt, ist mehr oder weniger Glückssache. Es lässt sich nur sagen, dass einige Transponder bei manchen Satelliten deutlich anfälliger sind als andere. Auch scheinen manche Produktionschargen der Pinnacle PCTVSat besonders anfällig zu sein.
+
+
+13.4  Iterativer Suchlauf mit Teclasat.
+
+Als Nutzanwendung dieser Überlegungen ist in Teclasat ein 'iterativer Listensuchlauf' implementiert. Dazu kann man die Suchliste so gestalten, dass unnötige und störungsanfällige Transponder ausgespart bleiben; z.B. kann man sie in der Liste mit einem '#'-Zeichen auskommentieren.
+
+Nach einem Listensuchlauf bleiben in Teclasat die Zwischenergebnisse erhalten, selbst wenn zwischenzeitlich Teclasat abgeschaltet und sogar das System neugebootet wurde. Dann lässt sich der Suchlauf beliebig of wiederholen; dabei überprüft Teclasat alle Transponder der Liste und fragt (ggf. nach Rückfrage) nur die noch fehlenden Transponder ab, so dass in der Regel die Senderlisten komplettiert werden können. Dazu müssen unbedingt genau die gleichen Parameter eingestellt sein wie beim Initial-Suchlauf.
+
+Die Zwischenergebnisse eines Suchlaufs werden nur in zwei Fällen gelöscht:
+- mit dem Knopf 'Suchlauf-Löschen' im Suchlauf-Fenster; oder:
+- durch Neustart eines Suchlaufs mit dem Knopf 'Suchlauf-Neustart'.
+
+
+13.5  Die Abfolge eines Suchlaufs.
+
+Der Suchlauf besteht aus drei Schritten:
+  (a) Kennwerte einstellen,
+  (b) Suchlaufdaten erfassen,
+  (c) Auswerten.
+Für die Datenerfassung sind in Teclasat der dvb-Suchlauf und der Listensuchlauf gleichberechtigt implementiert. Weil der Listensuchlauf im kommerziellen Bereich weniger üblich ist, wird er nachfolgend genauer beschrieben. Für jeden Transponder der Liste wird dieses ausgeführt:
+
+1. mit 'szap' den Transponder xx anwählen (xx = 1, 2, 3,..),
+   mit Frequenz, Polarität, Sat#, Sig-rate.
+
+2. mit 'dvbscan' bzw. 'scan' die Transponderdaten auslesen,
+   durch Umleitung von stdout und stderr.
+   Diese werden abgespeichert in den Dateien:
+   ~/pctv/scan/tmp1/out1-xx   und
+   ~/pctv/scan/tmp2/out2-xx   (also: out2-1, out2-2, out2-3, usw...)
+
+3. Aus den 'out1+out2'-Daten werden alle Senderdaten dieses Transponders gebildet
+   und abgespeichert in einer Datei:
+   ~/pctv/scan/tmp3/found-xx
+
+4. Aus der aktuellen Basisliste werden alle Sender für den aktuellenTransponder gesucht und abgespeichert in der Datei:
+   ~/pctv/scan/tmp3/old-xx
+
+13.6 Einstufen der Suchlaufergebnisse.
+
+In den nächsten Schritten werden die gefundenen Ergebnisse gesichtet und in Typklassen eingestuft.
+
+5. Jeder gefundene Sender wird geprüft, ob er in der vorhandenen Basis-Senderliste vorkommt, und wird dementsprechend eingeordnet:
+   in Basis  gefunden  Klasse     speichern in Datei
+   yes+no    yes       gefunden   ~/pctv/scan/tmp3/found-xx
+   yes       yes+no    alt        ~/pctv/scan/tmp3/old-xx
+   no        yes       neu        ~/pctv/scan/tmp3/new-xx
+   yes       no        entfallen  ~/pctv/scan/tmp3/lost-xx
+   yes       yes       bestätigt  ~/pctv/scan/tmp3/confirmed-xx
+
+Ein Sender kann aus verschiedenen Gründen als "entfallen" eingestuft werden:
+- der Sender wurde vom Betreiber abgeschaltet,
+- die Senderdaten wurden geändert, evtl. auch nur die Schreibweise des Sendernamens!
+- die PCTVSat liefert keine System-Information.
+Letzteres ist die erwähnte Störung. Sie äußert sich darin, dass die Datei out-xx leer ist.
+
+6. Jede der fünf Klassen wird in eine Sammeldatei eingetragen:
+   Summe aller "~/pctv/scan/tmp3/found-xx"     -> "~/pctv/scan/tmp3/found-all",
+   Summe aller "~/pctv/scan/tmp3/old-xx"       -> "~/pctv/scan/tmp3/old-all",
+   Summe aller "~/pctv/scan/tmp3/new-xx"       -> "~/pctv/scan/tmp3/new-all",
+   Summe aller "~/pctv/scan/tmp3/lost-xx"      -> "~/pctv/scan/tmp3/lost-all",
+   Summe aller "~/pctv/scan/tmp3/confirmed-xx" -> "~/pctv/scan/tmp3/confirmed-all",
+
+7. Die beiden Rohlinge out1-xx und out2-xx werden jeweils in eine Sammeldatei eingetragen:
+   ~/pctv/scan/tmp1/out1-xx   ->  ~/pctv/scan/tmp1/out1-all
+   ~/pctv/scan/tmp2/out2-xx   ->  ~/pctv/scan/tmp2/out2-all
+
+8. Nachdem alle Transponder der Suchlaufdatei abgearbeitet sind, überträgt Teclasat aus der alten Basisliste alle Sender, die von der Suchliste nicht betroffen waren, in eine neue Sammeldatei:
+   in Basisliste in Suchdatei    Klasse
+      yes           no        nicht betroffen   -> "~/pctv/scan/tmp3/untouched-all"
+
+Das Suchlauf-Fenster erlaubt, während und nach dem Suchlauf die erzeugten Dateien anzuschauen, und informiert in weiteren Kenndaten über den Ablauf.
+
+13.7  Abspeichern der Ergebnisse.
+
+Zum Abschluss werden die gefundenen Senderdaten, also die neuen, entfallenen und bestätigten Sender, als Ergebnisdatei abgespeichert und stehen für die Auswertung zur Verfügung.
+
+13.8  Der Editor.
+
+Zur Bearbeitung von Senderlisten bietet Teclasat einen flexiblen wysiwyg-Editor an. Mit den Standard-Funktionen Kopieren, Ausschneiden, Einfügen kann man die Sender in den Listen beliebig umordnen. Zusätzlich sind einige Sortier- und Filterfunktionen verfügbar. Eine Reihe von Hilfsfunktionen, z.B. der Zeilenmodus, können das Bearbeiten der Senderlisten ungemein erleichtern.
+
+Auch das vorhin als Nr.5 beschriebene 'Einstufen' der Sender kann im Editor als Hilfsfunktion ausgeführt werden, und zwar beliebig oft. Die angewählte Ergebnisdatei aus einem dvb-Suchlauf oder einem Listensuchlauf wird dabei mit dem Bildschirminhalt in Bezug gesetzt, gleichgültig woher dieser stammt. Damit lassen sich sehr bequem auch Favoriten- oder Radiolisten direkt bearbeiten.
+
+Natürlich kann der Editor auch auf beliebige Textdateien zugreifen und diese bearbeiten. Wenn die genannten Hilfsfunktionen dabei hinderlich wären, kann man sie abschalten.
+
+
+14.  Sendersuchlauf: Praktische Ausführung.
+
+14.1  Schnelldurchlauf: Favoritensender auf Astra.
+
+Das beschriebene Suchlaufverfahren ist durchaus komplex; die praktische Duchführung erfordert aber in der Regel nur wenige Mausklicks.  Mit 'Einrichten' -> 'Suchlauf' erhält man das Suchlauf-Fenster. Meist kann man man es bei den Voreinstellungen belassen: das bedeutet einen Suchlauf über die Astra-Kurzliste mit ca. 6 Transpondern, welche die gängigsten deutschsprachigen Sender enthalten.
+'Ausführen' -> 'Suchlauf-Starten' -> 'Auswerten' -> 'Laden' : damit sehen die Ergebnisse bereit.
+Wer nicht tiefer einsteigen möchte, lässt den 'Expertenmodus' ausgeschaltet und wählt einfach 'OK' .
+Mit den Voreinstellungen hat man dann die Basisliste im Editor, mit diesen Zusätzen:
+- neue Sender angefügt,
+- entfallene gelöscht,
+- unsauber erkannte Sender entfernt,
+- alle Sender eingestuft und farblich markiert.
+Die neue Senderliste läst sich jetzt im Editor sichten und bearbeiten.
+Das Ergebnis kann man als Basisliste oder unter anderem Namen abspeichern.
+
+In der Regel läuft dieser Kurz-Suchlauf problemlos in wenigen Sekunden ab. Sollte ein timeout-Fehler gemeldet werden, so führt kein Weg an der Prozedur des Abschnitts 13.3 vorbei: den Suchlauf wiederholen und soweit nötig per Dialog in der Konsole oder per Neubooten die Blockade aufheben.
+
+
+14.2  Parametereinstellung für alle Möglichkeiten.
+
+Alternativ lässt sich der Teclasat-Suchlauf im Suchlauf-Fenster sehr flexibel einstellen. Für die einzelnen Bereiche wird jeweils ein besonderes Eingabefeld aufgeklappt.
+
+Im Dateien-Feld wird man es zumeist bei den Voreinstellungen belassen. Dann sind die dvb-Dateien Astra-19.2E und Hotbird13.0E angewählt. Damit ist zugleich definiert:
+sat#0 = Astra und sat#1 = Hotbird .
+Man kann andere dvb-Dateien anwählen und damit diese Festlegung ändern, z.B. sat# = Hispasat.
+Mit den angegebenen Satellitennamen werden die standardmäßigen Namen für Suchlisten gebildet,
+z.B.  astra-list0  astra-list1  astra-list2 .
+
+Nun ist der Suchmodus festzulegen: dvb, Liste oder manuell (für Einzeltransponder). Die Einstellfenster dürften nunmehr selbsterklärend sein.
+
+
+15.  Videotext mit Teclasat: alevt-dvb und mtt4.
+
+Teclasat liefert Videotext wahlweise mit alevt-dvb oder mtt4 oder mtt. Wenn schon ein Sender läuft, wird der zugehörige Videotext gestartet, andernfalls wird der angewählte Sender eingestellt.
+
+alevt-dvb ist eine vom Teclasat-Team modifizierte Version des älteren Programmes 'alevt 1.6.1'. Nach dem Aufruf durch Teclasat ('Videotext-ein') öffnet sich ein Hilfsfenster, welches alle in dem betreffenden Transponder verfügbaren Videotexte anzeigt. Der Benutzer kann beliebige Zeilen anklicken und damit auch mehrere Videotexte gleichzeitig abbilden. Diese Videotexte sind unabhängig von einem gerade laufenden TV-Programm (des gleichen Transponders!) und sind ggf. auch über ein Radio-Programm aufrufbar.
+
+'mtt4' ist ein standardmäßiger Bestandteil des Paketes 'xawtv4'. Teclasat ruft das Programm mtt4 mit dem angewählten Sender auf, der weitere Ablauf ist durch mtt4 vorgegeben.
+
+*** Wichtiger Hinweis: ***
+ das Paket 'xawtv' wurde ursprnglich für terrestrisches Fernsehen geplant und später für dvb-s erweitert. In manchen Installationen, z.B. Suse9.3, sind beide Versionen vertreten; dann ist mtt4 das dvb-s-taugliche Programm. In anderen Installationen ist nur ein Programm mtt vorhanden, welches möglicherweise dvb-s-tauglich ist.
+Auch von alevt-dvb gibt es eine Standard-Version 'alevt' , die nicht für dvb-Betrieb tauglich ist.
+
+
+16.  EPG mit Teclasat: dvbrowse.
+
+EPG vollzieht sich mit Teclasat über das Programm 'dvbrowse' aus dem 'xawtv'-Paket. Ebenso wie bei mtt4 wird von Teclasat bei Bedarf der angewählte Sender eingestellt und dvbrowse gestartet.
+
+
+17.  Pegelanzeige mit dem Programm 'pegel'.
+
+Die Pegelanzeige (rechts im Suchlauf-Fenster) gibt einen Anhaltswert für die Stärke des empfangenen Signals und ist somit für Kontroll- oder Diagnosezwecke oder als 'Satfinder' sehr nützlich. Der angezeigte Zahlenwert ist jedoch nicht geeicht und sollte nicht als Volt- oder dB-Wert interpretiert werden.
+
+
+
+
+
+
+
+A-0.  Anhang:
+
+A-1.  Installation und Systemvoraussetzungen.
+
+Teclasat ist auf manchen Linux-Distributionen (z.B. Kanotix) gebrauchsfertig enthalten, läßt sich aber auf jedem modernen Linux-System leicht installieren. Systemseitig vorausgesetzt wird dieses:
+
+(a) tcl/tk - Interpreter samt iwidgets-Paket;
+(b) dvb-Utilities: die Programme szap/tzap/czap sowie dvbscan;
+    Bemerkung: in Kanotix ist dvbscan unter der Bezeichnung 'scan' enthalten. Auch andere Programmnamen kommen vor.
+(c) Player-Programm: xine, kaffeine, mplayer, totem (mindestens eines davon)
+(d) für Videotext: alevt-dvb und/oder mtt4 bzw. mtt (dvb-taugliche Version).
+    Bemerkung: in Suse10.0 ist alevt-dvb enthalten. In Kanotix ist alevt-dvb gebrauchsfertig enthalten.
+(e) für Timer-Aufnahmen: at und cron zur Zeitsteuerung der Aufnahme-Jobs.
+(f) für EPG: dvbrowse (aus dem xawtv-Paket).
+Wir gehen davon aus, dass diese Voraussetzungen erfüllt sind.
+Die Module (d,e,f) sind optional; ggf. wären die betreffenden Funktionen nicht verfügbar.
+
+Ob ein Programm in der Installation verfügbar ist, kann man in der Konsole mit dem 'which'-Kommando abfragen. Z.B.
+> which szap
+/usr/bin/szap
+... mit dem Konqueror kann man das Program genauer orten.
+Oder man ruft das Programm in der Konsole auf, z.B.
+> dvbscan  ,  oder:
+> alevt
+... und man erhält eine mehr oder weniger aussagekräftige Reaktion.
+In manchen Distributionen sind die genannten Programme unter anderen Namen vorhanden, z.B. scandvb statt dvbscan.
+
+In Suse-Systemen sind häufig die dvb-tools nicht installiert. Man kann das nachholen:
+ 1. Yast starten,
+ 2. Software > Software installieren oder löschen
+ 3. Unter Suche: dvb eingeben
+ 4. Das Kästchen vor dem dvb Paket anklicken bis dort drin ein Haken erscheint
+ 5. Knopf Übernehmen anklicken
+Das dvb-Paket beinhaltet szap, tzap, czap, dvbscan, sowie einige Dokumentation.
+
+Zur Installation des Teclasat-Systems kann man zwei Strategien verfolgen:
+(A) das 'Bastler-System' für Experimentierfreudige, oder
+(B) das 'Standard'-System für Multimedia-Nutzer.
+Der Unterschied liegt nur darin, dass im ersteren Falle die Programm- und Hilfsdateien im Benutzerbereich liegen und so für Experimente leichter zugänglich sind. Vgl. dazu auch Abschnitt 2.
+Auch andere Strukturen sind ohne Probleme möglich. Man kann in Teclasat im laufenden Betrieb andere Dateien bzw. Verzeichnisse eingeben, oder diese von vornherein bei der Installation einbringen, zweckmäßigerweise zusammen mit einer zugeschnittenen Konfigurationsdatei für den Halbwarmstart (s. Abschnitt A-4.4)
+
+
+A-2.  Installation als 'Bastler-System'.
+
+Teclasat selbst kommt als komprimierte zip-Datei mit einer Bezeichnung wie tecla08d-xx.zip oder ähnlich, je nach Version.
+Folgendes ist zu tun:
+
+A-2.1. Die Datei tecla08d-xx.zip (oder ähnlich) in einem beliebigen Verzeichnis speichern,
+z.B. als  ~/work1/tecla08d-xx.zip
+
+A-2.2. Entpacken:
+> cd
+> cd work1
+> unzip tecla08d-xx.zip
+Damit werden je nach Version in ~/work1/ ca. 10 Dateien erzeugt.
+Die nachfolgenden Schritte lassen sich - je nach Geschmack - evtl. bequemer mit Maus + Konqueror ausführen.
+
+A-2.3. Tecla-Script installieren, z.B. als  ~/pctv/tecla/tecla08d-xx.sh.
+> mkdir pctv                              (sofern noch nicht vorhanden)
+> mkdir pctv/tecla                        (sofern noch nicht vorhanden)
+> cp work1/tecla08d-xx.sh  pctv/tecla/.   (Punkt gehört zur Eingabe)
+> chmod a+x pctv/tecla/tecla08d-xx.sh     ('ausführbar' machen)
+...oder alternativ im Konqueror: Rechtsklick auf das Symbol von ~/pctv/tecla/tecla08d-xx.sh, 'Eigenschaften' - 'Berechtigungen' - 'ausführbar'.
+
+A-2.4. Hilfsdateien installieren (optional, aber empfohlen).
+Dies betrifft die Dateien teclasat.ppm , tecla08d-help-de , tecla08d-msg-de .
+Wir erzeugen ein Verzeichnis
+> mkdir pctv/utils
+...und kopieren die Dateien dorthin:
+> cp work1/teclasat.ppm  pctv/utils/.          (Punkt gehört zur Eingabe)
+> cp work1/tecla08d-help-de  pctv/utils/.      (Punkt gehört zur Eingabe)
+> cp work1/tecla08d-msg-de  pctv/utils/.       (Punkt gehört zur Eingabe)
+
+
+A-2.5. Arbeitsdateien installieren.
+Hierzu legen wir das 'versteckte' Verzeichnis ~/.tecla an:
+> mkdir .tecla
+.. und dorthin kopieren wir jetzt von ~/work1/ :
+   channels-20050324 (oder channels.conf oder ähnlich)
+   worklist
+   ARD-Favos (oder ähnlich)
+   Radio
+Hinweis: wer möchte, kann auch die mitgelieferte Konfigurationsdatei ~/.tecla/tecla08d.conf installieren; dies wird aber nicht empfohlen.
+Siehe Hinweise in den Abschnitten A-4.3 (Warmstart) und A-4.4 (Halbwarmstart).
+
+
+A-2.6. Suchlauf-Dateien installieren.
+Wer keinen Suchlauf ausführen will, kann diesen Abschnitt überspringen.
+Beim Entpacken lt. Schritt Nr.2 ist ein Ordner scanctrl entstanden, in dem sich mehrere Init-Dateien befinden.
+Wir kopieren den Ordner komplett nach ~/pctv/  und erhalten damit
+   ~/pctv/scanctrl/Astra-19.2E  etc...
+Hinweis: Der Ordner scanctrl enthält einen Unterordner listfiles mit den mitgelieferten Suchlisten.
+In früheren Versionen (bis tecla08c) waren alle Suchdateien in einem Ordner initlist enthalten.
+
+
+A-2.7. Binärprogramme installieren.
+Die Installation der player-Programme sowie der dvb-Utils ist systemabhängig und wird hier nicht beschrieben.
+Bei der Pegelanzeige liegt der Fall einfacher. Man kann (hoffentlich!) das Binärprogramm aus pegel.zip entpacken und 'pegel' direkt abspeichern als /usr/bin/pegel . Hierzu sind root-Rechte erforderlich, ich sage also nach dem Entpacken:
+> su   (Passwort eingeben)
+> cp ~/work1/pegel /usr/bin/pegel
+Anschließend können wir unsere root-Berechtigung aufgeben mit:
+> exit
+
+A-2.8. Symbolische Verknpfungen anlegen für '~/.tecla/channels.conf'.
+> ln -s ~/.tecla/channels-20050324 ~/.tecla/channels.conf
+Alternativ könnte man ~/.tecla/channels-20050324 umbenennen in ~/.tecla/channels.conf ; für Experimentierzwecke ist aber der symbolische Link praktischer.
+
+A-2.8. Symbolische Verknpfungen anlegen für das tecla-Script.
+> ln -s pctv/tecla/tecla08d-xx.sh tecla   (oder ähnlich)
+
+
+
+A-3.  Die Installation als 'Standard-System'.
+
+Die Installation als 'Standard-System' verläuft genau so wie bei dem 'Bastler-System', aber:
+- man speichert in den geschützten Bereich, also sind root-Rechte erforderlich;
+- einige Verzeichnisnamen sind anders.
+Im einzelnen:
+
+
+A-3.1. Die Datei tecla08d-xx.zip (oder ähnlich) in einem beliebigen Verzeichnis speichern,
+z.B. als  ~/work1/tecla08d-xx.zip
+
+A-3.2. Entpacken:
+> cd
+> cd work1
+> unzip tecla08d-xx.zip
+Damit werden je nach Version in ~/work1/ ca. 10 Dateien erzeugt.
+
+A-3.3. Tecla-Script installieren.
+Man speichert nach  /usr/bin/ und benennt das Script um:
+> su   (Passwort eingeben)
+> cp ~/work1/tecla08d-xx.sh /usr/bin/teclasat
+
+A-3.4. Hilfsdateien installieren.
+Diese Dateien speichert man (weiterhin als root) nach /usr/share/teclasat/ , also:
+> mkdir /usr/share/teclasat
+> cp ~/work1/teclasat.ppm /usr/share/teclasat/teclasat.ppm
+> cp ~/work1/tecla08d-help-de /usr/share/teclasat/tecla08d-help-de
+
+A-3.5. Arbeitsdateien installieren,
+Hierzu legen wir das 'versteckte' Verzeichnis ~/.tecla an:
+> mkdir .tecla
+.. und dorthin kopieren wir jetzt von ~/work1/ (Dateinamen z.T. geändert):
+   channels-20050324
+   mychans
+   favorites
+   radios
+Hinweis: wer möchte, kann auch die mitgelieferte Konfigurationsdatei ~/.tecla/tecla08d.conf installieren; dies wird aber nicht empfohlen.
+Siehe Hinweise in den Abschnitten A-4.3 (Warmstart) und A-4.4 (Halbwarmstart).
+
+
+A-3.6. Suchlauf-Dateien installieren (optional).
+Beim Entpacken lt. Schritt Nr.2 ist ein Ordner scanctrl entstanden, in dem sich mehrere Init-Dateien befinden.
+Wir kopieren den Ordner komplett nach ~/pctv/  und erhalten damit
+   ~/pctv/scanctrl/Astra-19.2E  etc...
+Oder alternativ installieren als:
+   /usr/share/teclasat/scanctrl/Astra-19.2E  etc...
+Hinweis: Der Ordner scanctrl enthält einen Unterordner listfiles mit den mitgelieferten Suchlisten.
+In früheren Versionen (bis tecla08c) waren alle Suchdateien in einem Ordner initlist enthalten.
+
+A-3.7. Binärprogramme installieren.
+Die Installation der player-Programme sowie der dvb-Utils ist systemabhängig und wird hier nicht beschrieben.
+Bei der Pegelanzeige liegt der Fall einfacher. Man kann (hoffentlich!) das Binärprogramm aus pegel.zip entpacken und 'pegel' direkt abspeichern als /usr/bin/pegel (als root), also:
+> su   (Passwort eingeben)
+> cp ~/work1/pegel /usr/bin/pegel
+Anschließend können wir unsere root-Berechtigung aufgeben mit:
+> exit
+
+A-3.8. Symbolische Verknüpfungen anlegen für '~/.tecla/channels.conf'.
+> ln -s ~/.tecla/channels-20050324 ~/.tecla/channels.conf
+Alternativ könnte man ~/.tecla/channels-20050324 umbenennen in ~/.tecla/channels.conf.
+Für Experimentierzwecke ist aber der symbolische Link praktischer.
+
+
+
+A-4.  Hinweise zum Programmstart.
+
+A-4.1   Das tecla-Script starten.
+
+Das tecla-Script muss als 'ausführbare Datei' gespeichert sein und lässt sich dann wie ein übliches Programm starten. Weil man die Scriptdatei sehr leicht 'irgendwohin' legen kann, sind gewisse Varianten möglich und ggf. auch praktisch.
+
+Für Test- und Diagnosezwecke empfiehlt es sich, teclasat aus der Konsole aufzurufen, insbesondere, wenn man mehrere Versionen vorhält.
+Dazu kann man einen Softlink im Heimatverzeichnis anlegen, beispielsweise:
+> ln -s pctv/tecla/tecla08d-xx.sh tecla   (oder ähnlich)
+So kann ich das Tecla-Script starten mit
+> ./tecla
+...und sehe dann in der Konsole eventuelle Status- bzw. Fehlerausgaben.
+
+Alternativ oder zusätzlich kann man das Dateisymbol '~/pctv/tecla/tecla08d-xx.sh' auf den Desktop ziehen und dort eine Verknüpfung anlegen.
+
+Das tecla-Script an Ort und Stelle umzubenennen in 'teclasat' ist für dauerhafte Installationen pflegeleichter, aber zum Experimentieren weniger transparent. Letztlich ist das Geschmackssache.
+
+
+A-4.2   Kaltstart.
+
+Teclasat benützt eine Konfigurationsdatei ~/.tecla/tecla08d.conf für eine Reihe von Kennwerten. Die Versionsbezeichnung, im Beispiel '07j', muss mit der des Tecla-Scriptes (z.B. tecla08d-xx.sh) übereinstimmen.
+
+Nach einem Programmstart sucht tecla zuerst die passende Konfigurationsdatei ~/.tecla/tecla08d.conf . Wird diese nicht gefunden, so sprechen wir vom 'Kaltstart'.
+
+Tecla benützt dann eine Reihe von internen Voreinstellungen und legt eine neue Datei ~/.tecla/tecla08d.conf  an, ggf. auch das Verzeichnis ~/.tecla/ .
+Falls eine Senderliste ~/.tecla/channels.conf  existiert, wird diese angewählt und benützt. Wird sie nicht gefunden, so fragt tecla danach; man kann eine 'externe' Liste angeben, z.B.  ~/.szap/channels.conf .
+Falls die drei anderen Senderlisten wlist, ARD-Favos, Radio in ~/.tecla/ gefunden werden, werden sie benützt, andernfalls werden sie als Leerdateien angelegt.
+
+Nun sucht tecla die Hilfedatei  /usr/share/teclasat/tecla08d-help-default , und dann ggf. die Datei tecla08d-help-de nacheinander in diesen Verzeichnissen:
+    /usr/share/teclasat/ ,   ~/pctv/utils/ ,       ~/.tecla/ .
+Im Erfolgsfalle wird im gleichen Verzeichnis nach der Icon-Datei teclasat.ppm gesucht, sowie nach der Textdatei tecla08d-msg-de. Soweit nötig, werden interne Behelfseinstellungen verwendet.
+*** Wichtiger Hinweis: ***
+Die drei Hilfsdateien (help, msg, ppm) müssen im gleichen Verzeichnis stehen!
+
+Für den Suchlauf wird (ab Version tecla08d) nach den folgenden Verzeichnissen gesucht:
+    /usr/share/teclasat/scanctrl ,  /usr/share/teclasat/initscan  ,  ~/pctv/scanctrl .
+Das letzte Verzeichnis wird ggf. angelegt. Falls in dem gefundenen Verzeichnis der Unterordner listfiles existiert, vermutet tecla die  Suchlisten dort, andernfalls im gleichen Verzeichnis wie die dvb-Dateien.
+
+Teclasat prüft die Installation und erkennt automatisch die verfügbaren Programme für die Player-, Videotext- und EPG-Funktionen.
+
+Damit ist Teclasat betriebsbereit. In der Minimalform genügt also das tecla-Script, eine Senderliste, ein dvb-Programm (szap) sowie ein Player-Programm (xine) für einen ausreichenden Betrieb.
+
+
+A-4.3   Warmstart.
+
+Im normalen Betrieb registriert tecla alle relevanten Eingaben in der Konfigurationsdatei. Nach einem Neustart kann tecla dann auf die gespeicherten Werte aufbauen, wir nennen dies den 'Warmstart'.
+
+Jetzt verlässt sich tecla darauf, dass die Dateien sich tatsächlich an den angegebenen Stellen befinden. Die beim Kaltstart beschriebenen Suchaktionen werden also nicht mehr durchgeführt.
+
+
+A-4.4   Halbwarmstart.
+
+Für den 'Halb-Warm-Start' wird eine Konfigurationsdatei künstlich hergestellt, welche nach Möglichkeit auf die zu erwartende Installation besser angepasst ist als die fest einprogrammierten Voreinstellungen. Tatsächlich ist das ein Kaltstart, aber für das Script stellt er sich wie ein Warmstart dar.
+
+Wer eine Konfigurationsdatei für den Halbwarmstart selber bearbeiten möchte, sollte bedenken, dass das tecla-Script im Warmstart die eingelesenen Daten viel weniger auf Plausibilität überprüft als im Kaltstart. Auch die Kaltstart-üblichen Suchaktionen werden unterlassen.
+
+Bei Dateien und Pfadangaben ist zu bedenken, dass tecla beim Einlesen die Tilde für das Heimatverzeichnis verstehen kann. Intern wird aber die ausführliche Pfadform verwendet und auch wieder abgespeichert. Um eine Konfigurationsdatei in eine andere Installation zu übertragen, muss ich z.B. '~/pctv/scan' sagen und erhalte beim nächsten Abspeichern z.B. '/home/tom/pctv/scan' zurück.

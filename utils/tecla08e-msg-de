@@ -1,0 +1,759 @@
+#
+#  teclasat:  TV+Radio viewer for pctvsat & compatible devices.
+#  file:      tecla08e-msg-de  version:   e02 (20.04.06)
+#  Test code Umlauts: äöüÄÖÜß
+#  ready for: tecla08e-01.sh & compatible versions
+#
+#  This is a list of texts, for button labels + other messages.
+#  See file tecla-readme and tecla08d-help for more info.
+#
+###  messages ms1 .. ms9
+ein
+aus
+Videotext
+Datei
+Videotext aus
+Start
+Pause
+Weiter
+Stop
+###  messages ms10 .. ms19 
+Timer
+Ausklappen
+Einklappen
+Einrichten
+Beenden
+Senderdaten
+Name
+frequency etc
+Sender
+Senderliste
+###  messages ms20 .. ms29 
+Senderlisten:
+Filtern
+Sortieren
+Wiedergabe
+Aufnahme
+--ms25...
+ausschneiden
+kopieren
+Titel-Favo1
+Titel-Favo2
+###  messages ms30 .. ms39
+Radio
+Sat
+alle Sender
+nur TV
+nur Radio
+nur Astra
+nur Hotbird
+ABC-Z
+ZYX-A
+Frequenz
+###  messages ms40 .. ms49
+TV/Radio
+Astra/Hotbd
+^ aufwärts
+v abwärts
+löschen
+Favorit einfg
+Radio einfg
+Titel einfg
+speichern
+einbinden
+###  messages ms50 .. ms59
+--ms50...
+Einrichten
+Hilfe
+Farben
+Suchlauf
+Farbwerte:
+Hintergrund
+Vordergrund
+Aktive Teile
+aus-Knöpfe
+###  messages ms60 .. ms69
+Rot
+Grün
+Blau
+Defaultwerte
+Hilfe-aus
+Suchlauf-aus
+Einrichten
+Einrichten-aus
+alle Prog.aus
+MPlayerConfig
+###  messages ms70 .. ms79
+Zurück
+System
+dum
+Kein Sender angewaehlt.
+Aufnahme ist aktiv mit 
+--ms75
+Aufnahme-Pause mit
+ umschalten auf
+ Kann
+ nicht starten! Abbruch.
+###  messages ms80 .. 89
+Kann xine nicht starten! Abbruch.
+Kann kaffeine nicht starten! Abbruch.
+Kann totem nicht starten! Abbruch.
+Kann MPlayer nicht starten! Abbruch.
+Aufnahme ist aktiv mit 
+Umschalten nur im Pause-Modus.
+Kann dvb-Module nicht laden! Abbruch.
+Entladen der Treiber wird blockiert:
+Bitte in Konsole eingeben: 
+Kein gueltiges Verzeichnis;
+###  messages ms90 .. 99
+Bitte Ausgabedatei auswaehlen
+Teclasat Timer-Aufnahme
+Bitte Aufnahmedaten eingeben
+Datum (mm/dd/yyyy)
+Stunde
+Minute
+Sender
+Dateiname
+Speichern
+Serie
+###  messages ms100 .. 109
+--ms100...
+Dateiwahl
+Beenden
+Loeschen
+Bitte Ausgabedatei auswählen
+105
+106
+oder Serie:
+Auswahl   
+oder auto-Name:
+###  messages ms110 .. 119
+z.B.
+Kann 'crontab' nicht starten.
+Kann 'at' nicht starten.
+Startzeit = Stopzeit? Abbruch.
+Zeiten überschneiden sich:
+Kann Datei nicht öffnen:
+Kann Datei nicht lesen
+Bitte Wochentag(e) eingeben
+*taeglich*
+List
+###  messages ms120 .. 129
+Datei
+nicht gefunden.
+Fenster existiert bereits.
+*** Inhaltsverzeichnis. ***
+Liste laden
+--ms125...
+TeclaSat: Hilfe
+Aufnahmedatei =
+Teclasat: manuelle Aufnahme
+Aufnahmemodus
+###  messages ms130 .. 139
+immer neu schreiben
+Aufnahmen anfügen
+auto-Name
+gespeichert in
+Nichts angewaehlt.
+135
+Timeraufnahme laeuft; Aufnahme abbrechen?
+Bitte 
+ auswählen:
+In diesem Transponder sind
+###  messages ms140 .. 149
+als Videotext verfuegbar:
+(Bitte Sender 1x anklicken)
+Liste ist leer
+(Titel)
+(Titel - keine Senderdaten)
+(kein Sender)
+Sender: 
+Arbeitsliste
+Liste defekt?
+Basisliste
+###  messages ms150 .. 159
+--ms150...
+Favo1-Liste
+Favo2-Liste
+Ablage
+ abgespeichert als Datei 
+Datei konnte nicht geschrieben werden.
+TeclaSat: Gruppentitel
+Bitte Gruppentitel eingeben:
+   nur: a-z, A-Z, 0-9, _; nicht: <>|
+OK
+###  messages ms160 .. 169
+Abbruch
+Fenster existiert bereits.
+TeclaSat: Einrichten
+Signalquelle:
+Signalart:
+Treiber-Module:
+nie laden
+PCTVSat
+PCTVSatCI
+169
+###  messages ms170 .. 179
+Playerwahl:
+xine
+kaffeine
+MPlayer
+totem
+--ms175...
+VideoText mit:
+alevt
+mtt4
+mtt
+###  messages ms180 .. 189
+180
+Anzeigen:
+Senderdaten
+Extras:
+Auto-Name
+EPG
+EPG-aus
+187
+Teclasat Version: 
+Info: www.pinnaclefanboard.com
+###  messages ms190 .. 199
+Kontakt:  pinux@pctvsat.com
+Einrichten
+Sprachen
+Zeiten
+194
+195
+TeclaSat: Zeiten
+Standzeit Welcome-Fenster:
+Standzeit Welcome-Fenster ;       aktuell: t0= 
+Dauerlauf
+###  messages ms200 .. 209
+--ms200...
+t0 speichern
+Defaultwert
+Wartezeiten:
+->xine ;                   aktuell: t1= 
+Interval nach kill-prog ;                aktuell: t2= 
+t1 speichern
+t2 speichern
+Defaultwerte
+t0 - Test
+###  messages ms210 .. 219
+Interval
+211
+TeclaSat: Sprachen
+###  proc.dvb-start (4x: 213..216)
+Suchlauf gestartet.
+ist keine dvb-Suchdatei.
+dvb-Suchlauf aktiv.
+- bitte warten -
+Test
+directory/Ordner
+select
+###  messages ms220 .. 229
+###  proc.initScanmode 2x
+TV+Radio
+Liste    
+###  proc.getListfiles  1x
+ = dvb-Datei?
+###  proc setScanctrl 1x
+(keine)
+###  proc.confliscan 1x
+Listensuchlauf
+--ms225...
+###  proc abortScan  3x
+Suchlauf abgebrochen
+ - bitte warten.
+dvb-Suchlauf abgebrochen
+229
+###  messages ms230 .. 239
+###  proc dvb-Scan  11x
+dvb-Suchlauf
+Kenndaten
+Signal  = 
+Modus   = 
+Auswahl = 
+Dienste = 
+Dateien
+Suchdatei = 
+Ergebnis  = 
+Status
+###  messages ms240 .. 249
+Pegel
+Bitte Verzeichnis auswaehlen
+Sat/Bereich
+aus Liste
+Suchdaten
+List-Modus
+Sat #0
+Sat #1
+dvb-Modus
+249
+###  messages ms250 .. 259
+--ms250...
+###  proc.confdvbscan  3x
+Signalquelle
+dvb-Suchlauf
+Suchdatei (dvb-Modus)
+254
+255
+Auswahl:
+nur FTA
+(alle)
+Dienste:
+#  messages ms260 .. 269
+nur TV
+nur Radio
+TV + Radio
+sonstiges
+(alles)
+Sat / Bereich einstellen
+andere Einstellung
+andere Datei
+Sat / Bereich #0:
+Sat / Bereich #1:
+###  messages ms270 .. 279
+Standard-Suchlisten
+Pegelanzeige
+Std-Listen
+273
+274
+--ms275...
+Bitte Ergebnisdatei angeben
+277
+x
+x
+###  messages ms280 .. 289
+x
+x
+x
+Kann Programm dvb-scan nicht starten!
+Kann Datei nicht oeffnen.
+#####  proc doHelp
+Bitte Hilfe-Datei auswählen
+\t^zum Anfang\n
+\t^ auf
+\t  v ab\n
+Teclasat Version:
+###  messages ms290 .. 299
+von
+###  proc getMyscan2
+Bitte Datei angeben:
+292
+Kann Scan-Datei nicht oeffnen.
+###  proc getSavetext
+Neu abspeichern als
+Anfügen an
+Verzeichnis =
+297
+298
+299
+###  messages ms300 .. 309
+--ms300
+###  proc saveScan
+Keine Daten von Listen-Suchlauf gefunden;
+kann dvb-Daten nicht speichern.
+Ergebnisse abgespeichert:
+bestätigte,
+nicht-betroffene,
+neue,
+entfallene.
+Ergebnis abgespeichert,
+Sender.
+###  messages ms310 .. 319
+###  proc getLoadtext
+Suchlaufergebnis
+Hilfsdatei
+Vorauswahl
+laden
+anfügen
+Datei =
+Verzeichnis =
+317
+318
+319
+###  messages ms320 .....
+###  proc loadList
+wurde geladen
+wurde angefügt
+322
+###  proc saveList
+Abgespeichert als
+Angefügt an
+--ms325...
+System runterfahren
+(falls berechtigt)
+Halt
+Manuell
+###  messages ms330...
+In Aufnahmeliste
+Verzeichnis der Suchmodus-Dateien
+Aufnahmetag
+Ende
+Sender
+täglich
+Montag
+Dienstag
+Mittwoch
+Donnerstag
+###  messages ms340...
+Freitag
+Samstag
+Sonntag
+Signalquelle
+x
+x
+x
+Sat-Nr.
+Einzel-Transponder
+349
+###  messages ms350...
+---ms350...
+x
+x
+x
+x
+x
+x
+x
+x
+x
+###  messages ms360...
+360
+Transponder ausgewertet
+362
+363
+Anzeigen
+365
+366
+367
+368
+369
+###  messages ms370...
+nicht betroffen
+ganze Listen
+alt
+gefunden
+nicht betroffen
+---ms375...
+Expertenmodus
+Radios markieren
+378
+bestätigt
+###  messages ms380...
+neu
+entfallen
+nicht betroffen
+x
+x
+x
+x
+x
+x
+x
+###  messages ms390...
+x
+x
+x
+x
+x
+x
+x
+x
+x
+x
+###  messages ms400...
+---ms400
+Kann Datei nicht lesen:
+Kann Datei nicht öffnen:
+nicht öffnen;
+Bitte Suchlauf neu starten.
+Transponderliste wurde geändert;
+Kann Datei out2 nicht lesen
+von 
+war in früherem Suchlauf gestört (time-out);
+abbrechen, diesen Transpdr.abfragen, oder auslassen?
+###  messages ms410...
+410
+411
+weiter nonstop
+in Suchliste
+Suchbericht
+gefunden
+Suchergebnis
+Suchliste
+auslassen
+abbrechen
+###  messages ms420...
+abfragen
+Suchlauf
+Starten
+Wiederholen
+Löschen
+---ms425
+426
+427
+428
+429
+###  messages ms430...
+430
+431
+432
+Basisliste
+Arbeitsliste
+Favoliste
+Radioliste
+437
+438
+439
+###  messages ms440...
+440
+Filtern
+nur TV
+nur Radio
+nur sat0
+nur sat1
+Sortieren
+Frequenz
+ABC
+TV / Radio
+###  messages ms450...
+---ms450
+sat0 / sat1
+###  proc.configScan (21x)
+Suchlauf einrichten
+Kenndaten
+Signal  = 
+Modus   = 
+Auswahl = 
+Dienste = 
+Dateien
+Suchdatei = 
+###  messages ms460...
+im Verzeichnis = 
+Ergebnis  = 
+Suchlauf
+Einrichten
+Suchmodus
+Ausführen
+Auswerten
+Hilfe  
+Voreinstellung
+Dateien
+###  messages ms470...
+Liste
+dvb
+manuell
+x
+x
+---ms475
+###  proc confManscan 9x
+Manueller Suchlauf
+manuell
+bitte eingeben:
+(Einzeltransponder)
+###  messages ms480...
+TV+Radio
+nur TV
+nur Radio
+sonst.
+alle
+485
+###  proc.confiles 16x
+Dateien
+Standard-dvb-Dateien
+Sat-Name
+dvb-Datei
+###  messages ms490...
+alle im Verzeichnis 
+andere Suchdatei =
+im Verzeichnis  =
+Ergebnisdatei
+Ergebnis =
+im Verzeichnis =
+andere Dateien wählen 
+497
+498
+Verzeichnis f.Standard-Suchlisten
+###  messages ms500...
+---ms500
+Sat #0
+Sat #1
+andere
+Ergebnis
+dvb-Datei?
+Bitte Suchliste angeben
+Bitte dvb-Suchdatei angeben
+Bitte Standard-dvb-Datei angeben
+###  proc getScanresult 1x
+Kann Verzeichnis nicht anlegen: 
+###  messages ms510...
+###  proc configShow 9x
+Für jeden Transponder
+Sender in alter Liste
+Transpdr.in Suchliste
+gefundene Sender
+bestätigte Sender
+neue Sender
+entfallene Sender
+out1-Daten
+out2-Daten
+x
+###  messages ms520...
+###  proc doScan  25x
+Suchlauf ausfuehren
+Signal  = 
+Modus   = 
+Auswahl = 
+524
+---ms525
+Dienste = 
+Suchdatei = 
+Ergebnis  = 
+Anzeigen:
+###  messages ms530...
+neue; 
+bestätigte; 
+entfallene;
+nicht-betroffene; 
+alle gefundenen;
+Suchbericht; 
+Suchliste ; 
+anderes
+Status
+Einstellen
+###  messages ms540...
+Vorauswahl
+Anzeige
+Auswerten
+Ergebnis auswählen 
+für Ergebnisdatei
+Einstellbereich
+einklappen
+###  proc endScan  2x
+dvb-Suchlauf beendet
+Suchlauf beendet
+549
+###  messages ms550...
+---ms550
+###  proc dvb-blink  2x
+dvb-Suchlauf beendet.
+Ergebnis abgespeichert.
+###  proc autoScan  34x
+Listensuchlauf wird wiederholt.
+Suchlauf gestartet.
+Alte Daten werden gelöscht.
+Manuell/Einzeltransponder: 
+557
+558
+559
+###  messages ms560...
+Keine gueltige Suchliste!
+Suchliste wird geprüft:
+Suchliste:
+Alte Suchlauf-Daten geloescht.
+x
+Suchlauf mit
+timeout-Störung bei Trp.#
+timeout-Störung, bitte Suchbericht beachten.
+Treibermodul dvb-bt8xx ist blockiert, Details s.Hilfetext.
+x
+###  messages ms570...
+Bitte eine Konsole öffnen, eingeben:
+> su (root-Passwort)
+ # modprobe -r dvb-bt8xx
+ # modprobe dvb-bt8xx
+ # exit
+---ms575
+timeout-Störung bei Trp.#
+Treibermodul dvb-bt8xx ist blockiert,
+bitte Suchbericht beachten.
+Dann: Knopf 'Weiter' anklicken.
+###  messages ms580...
+Ende der Liste: Suchlauf abgebrochen.
+Suchlauf abgebrochen.
+Suchlauf wird fortgesetzt mit Trp.#
+Bitte ggf. Suchlauf wiederholen, um Trp.#
+abzufragen.
+Sender gefunden;
+neue Sender
+bestätigt,
+entfallen,
+nicht betroffen (andere Transpdr)
+###  messages ms590...
+Suchlauf mit 
+ beendet
+Suchlauf beendet; Ergebnisse werden abspeichert.
+Suchlauf beendet:
+x
+x
+x
+x
+x
+x
+###  messages ms600...
+---ms600
+Teclasat: Editor
+Expertenmodus
+Laden
+Editor
+Speichern
+Hilfe
+Suchlauf
+OK
+Ausklappen
+###  messages ms610...
+abbrechen
+Hauptliste laden
+Ergebnisdatei
+andere Datei
+Dateiwahl
+Suchlaufergebnis
+Hauptliste einstufen
+neue Sender anfügen
+entfallene Sender löschen
+\[xyz\]-Sender löschen
+###  messages ms620...
+Radios markieren
+Im Editor
+neu laden
+Text anfügen
+2-spaltig
+---ms625
+Zeilenmodus
+Ausschneiden
+Kopieren
+Einfügen
+###  messages ms630...
+^ auf
+v ab
+Anzeige
+Einstufen
+Filtern
+Sortieren
+Hilfe
+Sendertest
+Speichern als:
+Suchlaufergebnis
+###  messages ms640...
+Hilfsdatei
+Dateiwahl
+neu speichern
+anfügen
+Speichern als:
+Einstufen
+Leider noch nicht fertig
+Filtern: Auswahl
+Filtern: löschen
+[xyz]
+###  messages ms650...
+---ms650
+Duplikate
+Sender löschen
+entfallene
+nichtbetroffene
+bestätigte
+neue
+Einklappen
+658
+** end **
+#######################
