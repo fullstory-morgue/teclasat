@@ -1,0 +1,6 @@
+utils/*				usr/share/teclasat/
+channels/*			usr/share/teclasat/
+debian/*.desktop		usr/share/teclasat/
+scanctrl			usr/share/teclasat/
+debian/kaffeinerc		etc/skel/.kde/share/config/
+debian/teclasat.desktop		usr/share/applnk/Multimedia/

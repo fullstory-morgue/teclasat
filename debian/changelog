@@ -1,0 +1,310 @@
+teclasat (0.8e02-1) unstable; urgency=low
+
+  * remove channels.conf.dvb-c channels.conf.dvb-t channels.conf.dvb-s.
+  * don't strictly depend on xine-ui.
+  * only recommend at.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 24 Apr 2006 01:32:03 +0200
+
+teclasat (0.8d02-2) unstable; urgency=low
+
+  * temporarily add xine-ui as hard dependency.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 10 Mar 2006 00:03:09 +0100
+
+teclasat (0.8d02-1) unstable; urgency=low
+
+  * new upstream version.
+  * update channels.kaffeine.
+  * remove warmstart features from wrapper, now handled by teclasat.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  7 Mar 2006 10:14:25 +0100
+
+teclasat (0.8d01-1) unstable; urgency=low
+
+  * new upstream version.
+  * update channels.kaffeine.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 18 Feb 2006 01:09:34 +0100
+
+teclasat (0.8c01-1) unstable; urgency=low
+
+  * new upstream version.
+  * update channels.kaffeine.
+  * remove bogus error condition from teclasat wrapper.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 18 Jan 2006 01:01:11 +0100
+
+teclasat (0.8b08-1) unstable; urgency=low
+
+  * new upstream version.
+  * include worklist.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 24 Dec 2005 23:59:55 +0100
+
+teclasat (0.8b07-3) unstable; urgency=low
+
+  * include Radio list.
+  * execute teclasat detached.
+  * convert utf-8 to latin1.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 24 Dec 2005 14:13:51 +0100
+
+teclasat (0.8b07-2) unstable; urgency=low
+
+  * add ARD-Favos.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 24 Dec 2005 03:30:17 +0100
+
+teclasat (0.8b07-1) unstable; urgency=low
+
+  * new upstream version.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 24 Dec 2005 02:05:03 +0100
+
+teclasat (0.8b06-1) unstable; urgency=low
+
+  * new upstream version.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 19 Dec 2005 00:13:28 +0100
+
+teclasat (0.8b05-1) unstable; urgency=low
+
+  * new upstream version.
+  * update channels.conf for kaffeine.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 17 Dec 2005 15:37:25 +0100
+
+teclasat (0.8b04-1) unstable; urgency=low
+
+  * new upstream version.
+  * add mychans radio to profile.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  8 Dec 2005 10:15:15 +0100
+
+teclasat (0.8a02-1) unstable; urgency=low
+
+  * new upstream version.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 20 Oct 2005 01:12:51 +0200
+
+teclasat (0.8a01-2) unstable; urgency=low
+
+  * fix location for transponder lists to /usr/share/teclasat/initscan.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 12 Oct 2005 11:31:00 +0200
+
+teclasat (0.8a01-1) unstable; urgency=low
+
+  * new upstream version.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 11 Oct 2005 23:16:37 +0200
+
+teclasat (0.7n05-1) unstable; urgency=low
+
+  * update to new upstream version.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun,  9 Oct 2005 02:36:36 +0200
+
+teclasat (0.7n03-1) unstable; urgency=low
+
+  * new upstream version.
+  * small packaging fixes.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed,  5 Oct 2005 12:58:06 +0200
+
+teclasat (0.7n01-1) unstable; urgency=low
+
+  * new upstream version.
+  * uses internal ignition.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun,  2 Oct 2005 17:44:19 +0200
+
+teclasat (0.7m02-1) unstable; urgency=low
+
+  * new upstream version.
+  * fix file layout.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 19 Sep 2005 02:36:59 +0200
+
+teclasat (0.7k07-1) unstable; urgency=low
+
+  * new upstream version.
+  * fix locations for:
+    - tecla07k-help-de
+    - tecla07k-msg-de
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 17 Sep 2005 12:25:55 +0200
+
+teclasat (0.7k04-1) unstable; urgency=low
+
+  * new upstream version.
+  * update channel.conf for kaffeine.
+  * move binaries to /usr/lib/teclasat/.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 16 Sep 2005 01:25:52 +0200
+
+teclasat (0.7f04-3) unstable; urgency=low
+
+  * recompile with gcc-4.0
+  * update Channels for kaffeine.
+  * bump standards version to 3.6.2.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 18 Aug 2005 02:17:26 +0200
+
+teclasat (0.7f04-2) unstable; urgency=low
+
+  * update channels.dvb for kaffeine. 
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 30 May 2005 00:31:58 +0200
+
+teclasat (0.7f04-1) unstable; urgency=low
+
+  * new upstream version.
+  * remove kaxtv preconfig.
+  * update channels.conf.dvb-s.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 18 Apr 2005 18:33:53 +0200
+
+teclasat (0.7e02-1) unstable; urgency=low
+
+  * new upstream version.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri,  8 Apr 2005 14:20:26 +0200
+
+teclasat (0.7e01-2) unstable; urgency=low
+
+  * add fixed help files.
+  * clean up packaging.
+  * add desktop icon on first start.
+  * fix kaffeinerc.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  7 Apr 2005 20:23:20 +0200
+
+teclasat (0.7e01-1) unstable; urgency=low
+
+  * new upstream version
+    - add pegel
+    - add initscan
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  7 Apr 2005 16:22:46 +0200
+
+teclasat (0.7d03-4) unstable; urgency=low
+
+  * fix kaffeine preconfig. 
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri,  1 Apr 2005 14:48:32 +0200
+
+teclasat (0.7d03-3) unstable; urgency=low
+
+  * add totem to the wrapper script. 
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 30 Mar 2005 03:05:27 +0200
+
+teclasat (0.7d03-2) unstable; urgency=low
+
+  * add totem as an option to the dependencies. 
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 30 Mar 2005 02:47:30 +0200
+
+teclasat (0.7d03-1) unstable; urgency=low
+
+  * new upstream version.
+  * improve packaging.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 28 Mar 2005 18:38:36 +0200
+
+teclasat (0.7c04-3) unstable; urgency=low
+
+  * fix dependencies.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 23 Mar 2005 22:42:20 +0100
+
+teclasat (0.7c04-2) unstable; urgency=low
+
+  * use kaffeine as default backend.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 23 Mar 2005 14:04:21 +0100
+
+teclasat (0.7c04-1) unstable; urgency=low
+
+  * new upstream release.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 12 Mar 2005 11:34:04 +0100
+
+teclasat (0.7b01-1) unstable; urgency=low
+
+  * new upstream release. 
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 10 Feb 2005 00:02:28 +0100
+
+teclasat (0.7a06-1) unstable; urgency=low
+
+  * new upstream release. 
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon,  7 Feb 2005 19:02:06 +0100
+
+teclasat (0.7a05-1) unstable; urgency=low
+
+  * new upstream release.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun,  6 Feb 2005 18:46:04 +0100
+
+teclasat (0.7a-5) unstable; urgency=low
+
+  * fix broken icons. 
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat,  5 Feb 2005 16:33:01 +0100
+
+teclasat (0.7a-4) unstable; urgency=low
+
+  * remove my-channels. 
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  1 Feb 2005 23:02:04 +0100
+
+teclasat (0.7a-3) unstable; urgency=low
+
+  * remove absolute paths.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  1 Feb 2005 22:41:42 +0100
+
+teclasat (0.7a-2) unstable; urgency=low
+
+  * new upstream version.
+  * change packaging.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  1 Feb 2005 21:49:57 +0100
+
+teclasat (0.6r-2) unstable; urgency=low
+
+  * fix platform designation.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 23 Dec 2004 01:01:23 +0100
+
+teclasat (0.6r-1) unstable; urgency=low
+
+  * New release
+
+ -- Joerg Schirotte <master@kanotix.com>  Wed, 24 Nov 2004 15:58:43 +0100
+
+teclasat (0.5e-1) unstable; urgency=low
+
+  * New release
+  * Added channels.kax for kaxtv
+
+ -- Joerg Schirotte <master@kanotix.com>  Fri, 15 Oct 2004 10:41:48 +0000
+
+teclasat (0.4f-2) unstable; urgency=low
+
+  * Icon added
+  * Link added
+  * DVB-S/C/T preconfig added
+
+ -- Joerg Schirotte <master@kanotix.com>  Sun,  3 Oct 2004 15:17:24 +0200
+
+teclasat (0.4f-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Joerg Schirotte <master@kanotix.com>  Sun, 22 Aug 2004 21:40:52 +0200
+

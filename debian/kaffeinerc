@@ -1,0 +1,5 @@
+[General Options]
+Embed in System Tray=true
+Endless Mode=false
+PauseHiddenVideo=true
+Screensaver Timeout=2

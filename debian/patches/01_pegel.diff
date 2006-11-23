@@ -1,0 +1,10 @@
+--- a/pegel/pegel.c	2005-04-07 16:00:46.000000000 +0200
++++ b/pegel/pegel.c	2005-04-07 16:07:03.000000000 +0200
+@@ -6,6 +6,7 @@
+ #include <sys/stat.h> 
+ #include <fcntl.h> 
+ #include <unistd.h> 
++#include <getopt.h>
+ #include <linux/dvb/frontend.h> 
+  
+ #define FRONTENDDEVICE "/dev/dvb/adapter%d/frontend%d" 

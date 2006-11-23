@@ -1,0 +1,36 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+
+PACKAGE_VER   = "$(shell dpkg-parsechangelog | grep ^Vers | cut -d\  -f2 | sed 's,-.*,,' | sed s/[a-z].*// | sed s/\\.//)""$(shell dpkg-parsechangelog | grep ^Vers | cut -d\  -f2 | sed 's,-.*,,' | sed s/[0-9]//g | sed s/\\.//)"
+PACKAGE_BUILD = "$(shell dpkg-parsechangelog | grep ^Vers | cut -d\  -f2 | sed 's,-.*,,' | sed s/.*[a-z]// | sed s/\\.//)"
+
+common-install-arch common-install-indep:: common-install-impl
+common-install-impl::
+	# install main binaries
+	install -m 0755 -d $(CURDIR)/debian/$(DEB_SOURCE_PACKAGE)/usr/bin
+	install -m 0755    $(CURDIR)/debian/teclasat.sh $(CURDIR)/debian/$(DEB_SOURCE_PACKAGE)/usr/bin/teclasat
+	perl -pi -e s/\%TECLA_VER\%/$(PACKAGE_VER)/g $(CURDIR)/debian/$(DEB_SOURCE_PACKAGE)/usr/bin/teclasat
+	perl -pi -e s/\%TECLA_BUILD\%/$(PACKAGE_BUILD)/g $(CURDIR)/debian/$(DEB_SOURCE_PACKAGE)/usr/bin/teclasat
+	
+	install -m 0755 -d $(CURDIR)/debian/$(DEB_SOURCE_PACKAGE)/usr/share/teclasat
+	install -m 0755 $(CURDIR)/tecla"$(PACKAGE_VER)"-"$(PACKAGE_BUILD)".sh $(CURDIR)/debian/$(DEB_SOURCE_PACKAGE)/usr/share/teclasat/
+	#install -m 0644 tecla$(PACKAGE_VER).conf $(CURDIR)/debian/$(DEB_SOURCE_PACKAGE)/usr/share/teclasat/$$i
+	#perl -pi -e "s|Player.*=.*|Player    = kaffeine|" $(CURDIR)/debian/$(DEB_SOURCE_PACKAGE)/usr/share/teclasat/tecla$(PACKAGE_VER).conf
+	touch $(CURDIR)/debian/$(DEB_SOURCE_PACKAGE)/usr/share/teclasat/mychans
+	
+	# compile pegel
+	install -m 0755 -d $(CURDIR)/debian/$(DEB_SOURCE_PACKAGE)/usr/lib/teclasat
+	$(CC) -Wall -pedantic -o $(CURDIR)/debian/$(DEB_SOURCE_PACKAGE)/usr/lib/teclasat/pegel $(CURDIR)/pegel/pegel.c
+	
+	# icons
+	for i in 16 22 32 48 64 ; do \
+		install -m 0755 -d $(CURDIR)/debian/$(DEB_SOURCE_PACKAGE)/usr/share/icons/crystalsvg/$$i"x"$$i/apps/ ; \
+		convert -resize $$i"x"$$i utils/$(DEB_SOURCE_PACKAGE).ppm png:$(CURDIR)/debian/$(DEB_SOURCE_PACKAGE)/usr/share/icons/crystalsvg/$$i"x"$$i/apps/$(DEB_SOURCE_PACKAGE).png ; \
+	done
+	
+	# kaffeine
+	install -m 0755 -d $(CURDIR)/debian/$(DEB_SOURCE_PACKAGE)/etc/skel/.kde/share/apps/kaffeine
+	install -m 0644    $(CURDIR)/debian/channels.kaffeine $(CURDIR)/debian/$(DEB_SOURCE_PACKAGE)/etc/skel/.kde/share/apps/kaffeine/channels.dvb
+	touch $(CURDIR)/debian/$(DEB_SOURCE_PACKAGE)/etc/skel/.kde/share/apps/kaffeine/wizard_stamp_v0.8.1
