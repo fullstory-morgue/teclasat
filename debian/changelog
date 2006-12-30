@@ -1,10 +1,18 @@
+teclasat (0.8e02-2) unstable; urgency=low
+
+  * depend on procps.
+  * bump standards version to 3.7.2.
+  * debian/control cosmetics.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 30 Dec 2006 17:48:39 +0100
+
 teclasat (0.8e02-1) unstable; urgency=low
 
   * remove channels.conf.dvb-c channels.conf.dvb-t channels.conf.dvb-s.
   * don't strictly depend on xine-ui.
   * only recommend at.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 24 Apr 2006 01:32:03 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 30 Dec 2006 17:47:39 +0100
 
 teclasat (0.8d02-2) unstable; urgency=low
 
